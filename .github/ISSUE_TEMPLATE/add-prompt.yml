@@ -1,0 +1,53 @@
+name: Add a prompt
+description: Suggest a presentation prompt to include in the collection
+title: "[prompt] <short title>"
+labels: ["prompt-suggestion"]
+body:
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt
+      description: The full prompt, word for word.
+      render: text
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scenario
+    attributes:
+      label: Scenario
+      options:
+        - marketing
+        - consulting
+        - business
+        - finance
+        - research
+        - design
+    validations:
+      required: true
+
+  - type: dropdown
+    id: returns
+    attributes:
+      label: What it returns
+      options:
+        - A full deck
+        - A single slide
+        - An outline
+        - A restyle of existing slides
+        - Speaker notes
+        - An add-on rule for another prompt
+    validations:
+      required: true
+
+  - type: textarea
+    id: inputs
+    attributes:
+      label: What you attached
+      description: The brief, report, notes or screenshots you gave the model. Leave out anything confidential.
+
+  - type: textarea
+    id: result
+    attributes:
+      label: Example slide
+      description: Drag in one slide the prompt produced, and say which tool produced it.
